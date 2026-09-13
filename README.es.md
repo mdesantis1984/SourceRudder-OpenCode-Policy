@@ -137,12 +137,12 @@ y una entrada de paquete `dist/index.js` que se pueda cargar.
 - [Reconocimientos](ACKNOWLEDGEMENTS.es.md): créditos verificados del proyecto y la comunidad.
 - [Security policy](SECURITY.md): orientación para la notificación de vulnerabilidades en inglés.
 - [Política de seguridad](SECURITY.es.md): orientación para la notificación de vulnerabilidades en español.
-- [Política del repositorio](docs/repository-policy.md): flujo de trabajo previsto y límites de administración de GitHub.
-- [Arquitectura](docs/architecture.md): límites del complemento y flujo en tiempo de ejecución.
-- [Configuración](docs/configuration.md): cambios de configuración propios y límites.
-- [Operaciones](docs/operations.md): verificación local y señales operativas.
-- [Desarrollo](docs/development.md): flujo de trabajo local compatible y referencia de CI.
-- [Versión y reversión](docs/release-and-rollback.md): procedimiento manual del operador y límites de publicación.
+- [Política del repositorio](docs/repository-policy.es.md): flujo de trabajo previsto y límites de administración de GitHub.
+- [Arquitectura](docs/architecture.es.md): límites del complemento y flujo en tiempo de ejecución.
+- [Configuración](docs/configuration.es.md): cambios de configuración propios y límites.
+- [Operaciones](docs/operations.es.md): verificación local y señales operativas.
+- [Desarrollo](docs/development.es.md): flujo de trabajo local compatible y referencia de CI.
+- [Release y rollback](docs/release-and-rollback.es.md): procedimiento manual del operador y límites de publicación.
 - [Sistema de marca](docs/brand.es.md): assets de identidad complementaria deterministas y procedencia.
 
 ## Desarrollo
