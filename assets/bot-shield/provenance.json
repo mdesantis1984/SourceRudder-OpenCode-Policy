@@ -1,0 +1,53 @@
+{
+  "artifact_scope": "repository presentation assets",
+  "accepted_visual_intent": {
+    "SourceRudder_ecosystem": "A recognizable white bot holding a magnifying glass.",
+    "policy_companion": "A separate luminous shield with a routing-evidence emblem.",
+    "supporting_elements": [
+      "six unlabeled source tiles",
+      "data-grid globe",
+      "terminal-shaped slab",
+      "indigo palette",
+      "text-free canonical key art"
+    ]
+  },
+  "generation": {
+    "tool": "Codex CLI built-in image_generation",
+    "tool_version": "0.149.1",
+    "model": "not recorded in the reviewed source package",
+    "attempt": 1,
+    "status": "accepted"
+  },
+  "reference_limitations": {
+    "bot_identity": "The local bot-identity reference was unavailable during generation; the approved identity description was used.",
+    "shield_material": "The shield material reference was attached successfully during generation."
+  },
+  "assets": {
+    "key-art-bot-shield-v1.png": {
+      "bytes": 2025260,
+      "dimensions": "1942x809",
+      "mode": "RGB",
+      "sha256": "a65fd7cd6bed0f78d2c014aac66592858af5ceaaf323cd1c7a897e0c8a1c1f30",
+      "role": "canonical text-free key art"
+    },
+    "hero-bot-shield-en.png": {
+      "bytes": 1740655,
+      "dimensions": "1774x887",
+      "mode": "RGB",
+      "sha256": "8ec45a4fa7540a53aa34e6b111e7c37b2a8a065cd81123f29670b591d3f28c3a",
+      "role": "English README hero"
+    },
+    "hero-bot-shield-es.png": {
+      "bytes": 1747026,
+      "dimensions": "1774x887",
+      "mode": "RGB",
+      "sha256": "6cab42b77d45a33fbb02ad3a17f8b00be33238d267250d5a666685ff446a64d6",
+      "role": "Spanish README hero"
+    }
+  },
+  "reproducibility": {
+    "presentation_method": "Deterministic Pillow crop and typography packaging from the canonical key art.",
+    "verification": "Verify each tracked file against its SHA-256, byte size, dimensions, and RGB mode above.",
+    "source_package_status": "Reviewed and approved before repository integration."
+  }
+}
