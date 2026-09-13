@@ -3,6 +3,7 @@ import { dirname, resolve } from "node:path";
 
 const documentationFiles = [
   "README.md",
+  "README.es.md",
   "RUNBOOK.md",
   "CONTRIBUTING.md",
   "SECURITY.md",
