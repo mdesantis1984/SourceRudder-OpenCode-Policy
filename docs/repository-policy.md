@@ -1,5 +1,7 @@
 # Repository Policy
 
+[English](repository-policy.md) | [Español](repository-policy.es.md)
+
 This document records the intended operating model. It distinguishes local
 repository artifacts from GitHub settings, which require administrator action and
 platform readback.
@@ -9,12 +11,12 @@ platform readback.
 | Topic                 | Current evidence                    | Intended state                                   |
 | --------------------- | ----------------------------------- | ------------------------------------------------ |
 | Visibility            | Private repository, read 2026-09-13 | Public conversion approved in issue #4; pending publication gate. |
-| Default branch        | `main` at `033512c`                 | Use `main` for authorized releases.              |
-| Development branch    | `develop` at `033512c`              | Use as the integration branch.                   |
-| Package publication   | `private: true` in `package.json`   | No npm publication.                              |
+| Default branch        | `main`; release baseline predates current `develop` slices | Receive authorized releases through a separate pull request. |
+| Development branch    | `develop`; integration branch for approved issue #4 slices | Continue as the integration branch. |
+| Package publication   | `private: true`; dry-run includes non-publishable material | Publish only after a verified minimal allowlist and release gate. |
 | Upstream relationship | README links to public SourceRudder | Companion plugin; not a fork.                    |
-| Automation            | `.github/workflows/ci.yml`          | Run verification for pushes and pull requests.   |
-| Licensing             | No license file                     | No license granted; maintainer decision pending. |
+| Automation            | CI and PR policy tracked on `develop` | Add an applicable release gate before publication. |
+| Licensing             | MIT `LICENSE` in the integration tree | Publish the MIT grant with the final release to `main`. |
 | Security reporting    | `SECURITY.md`                       | Use GitHub private reporting when enabled; otherwise request a private channel through a minimal public issue. |
 
 ## Intended GitHub controls

@@ -1,5 +1,7 @@
 # Architecture
 
+[English](architecture.md) | [Español](architecture.es.md)
+
 The plugin is a local OpenCode policy layer. It complements the public
 [SourceRudder MCP research gateway](https://github.com/mdesantis1984/SourceRudder)
 and is not a fork or deployment of that project.
