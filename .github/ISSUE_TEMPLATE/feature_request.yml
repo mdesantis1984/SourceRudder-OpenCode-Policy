@@ -1,0 +1,27 @@
+name: Feature request
+description: Propose a focused, policy-compatible improvement.
+title: "feat: "
+labels:
+  - enhancement
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem
+      description: Describe the user or operator problem to solve.
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposed outcome
+      description: Describe the smallest observable outcome. Do not propose a native websearch or webfetch fallback path.
+    validations:
+      required: true
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives considered
+      description: Describe workable alternatives and their tradeoffs.
+    validations:
+      required: false
