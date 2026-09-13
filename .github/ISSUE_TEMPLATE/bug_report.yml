@@ -1,0 +1,41 @@
+name: Bug report
+description: Report an unexpected policy-plugin behavior.
+title: "fix: "
+labels:
+  - bug
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Do not include credentials, tokens, local configuration, or sensitive security details.
+  - type: textarea
+    id: behavior
+    attributes:
+      label: Observed behavior
+      description: Describe what happened and what you expected instead.
+    validations:
+      required: true
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Reproduction
+      description: Provide minimal, safe steps to reproduce the issue.
+      placeholder: |
+        1. Run ...
+        2. Observe ...
+    validations:
+      required: true
+  - type: input
+    id: version
+    attributes:
+      label: Plugin version or commit
+      placeholder: "1.0.0"
+    validations:
+      required: true
+  - type: textarea
+    id: verification
+    attributes:
+      label: Verification already run
+      description: List safe commands and observed results.
+    validations:
+      required: false

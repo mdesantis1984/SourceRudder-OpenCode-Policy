@@ -1,0 +1,33 @@
+{
+  "name": "opencode-sourcerudder-policy",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Upgrade-safe SourceRudder-first policy plugin for OpenCode 1.18.26",
+  "type": "module",
+  "main": "dist/index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mdesantis1984/SourceRudder-OpenCode-Policy.git"
+  },
+  "homepage": "https://github.com/mdesantis1984/SourceRudder-OpenCode-Policy#readme",
+  "bugs": {
+    "url": "https://github.com/mdesantis1984/SourceRudder-OpenCode-Policy/issues"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.json && node scripts/build.mjs",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "test": "npm run build && node --test dist/test/*.test.js",
+    "check:package": "node --input-type=module -e \"await import('./dist/index.js')\"",
+    "check:docs": "node scripts/check-docs.mjs",
+    "check": "npm run typecheck && npm test && npm run check:package"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "devDependencies": {
+    "@opencode-ai/plugin": "1.18.26",
+    "@types/node": "^22.10.2",
+    "esbuild": "^0.24.2",
+    "typescript": "^5.7.3"
+  }
+}
