@@ -21,7 +21,7 @@ Use the bot plus shield lockup for hero and social presentation. Use the shield-
 
 ## Rebuild and verify
 
-Prerequisites: Node.js 20+ and ImageMagick `magick` (verified locally); no network, secrets, global configuration, or npm package is required.
+Prerequisites: Node.js 20+ and ImageMagick 7 `magick` **or** ImageMagick 6 `convert` plus `identify`; no network, secrets, global configuration, or npm package is required.
 
 ```sh
 node scripts/export-brand-assets.mjs

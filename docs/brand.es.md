@@ -21,7 +21,7 @@ Usa el lockup de bot y escudo para hero y presentación social. Usa la marca de 
 
 ## Reconstrucción y verificación
 
-Requisitos: Node.js 20+ e ImageMagick `magick` (verificado localmente); no se requiere red, secretos, configuración global ni paquetes npm.
+Requisitos: Node.js 20+ e ImageMagick 7 `magick` **o** ImageMagick 6 `convert` más `identify`; no se requiere red, secretos, configuración global ni paquetes npm.
 
 ```sh
 node scripts/export-brand-assets.mjs
