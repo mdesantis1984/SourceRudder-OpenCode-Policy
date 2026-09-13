@@ -130,6 +130,7 @@ The expected local success signal is a passing Node test run and a loadable
 - [Runbook](RUNBOOK.md): build, installation, verification, and rollback.
 - [Contributing guide](CONTRIBUTING.md): local development and review expectations.
 - [Code of Conduct](CODE_OF_CONDUCT.md): collaboration and private reporting boundaries.
+- [Acknowledgements](ACKNOWLEDGEMENTS.md): verified project and community credits.
 - [Security policy](SECURITY.md): vulnerability reporting guidance in English.
 - [Política de seguridad](SECURITY.es.md): guía de notificación de vulnerabilidades en español.
 - [Repository policy](docs/repository-policy.md): intended workflow and GitHub
