@@ -80,6 +80,7 @@ The expected local success signal is a passing Node test run and a loadable
 - [Development](docs/development.md): supported local workflow and CI baseline.
 - [Release and rollback](docs/release-and-rollback.md): manual operator procedure
   and publication boundaries.
+- [Brand system](docs/brand.md): deterministic companion identity assets and provenance.
 
 ## Development
 

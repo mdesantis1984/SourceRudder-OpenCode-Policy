@@ -82,6 +82,7 @@ y una entrada de paquete `dist/index.js` que se pueda cargar.
 - [Operaciones](docs/operations.md): verificación local y señales operativas.
 - [Desarrollo](docs/development.md): flujo de trabajo local compatible y referencia de CI.
 - [Versión y reversión](docs/release-and-rollback.md): procedimiento manual del operador y límites de publicación.
+- [Sistema de marca](docs/brand.es.md): assets de identidad complementaria deterministas y procedencia.
 
 ## Desarrollo
 

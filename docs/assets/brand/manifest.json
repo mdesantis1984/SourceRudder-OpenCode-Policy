@@ -1,0 +1,27 @@
+{
+  "version": 1,
+  "source_issue": 4,
+  "generator": "scripts/export-brand-assets.mjs",
+  "generated_source_limitation": "The accepted AI key art has no recorded model and no local bot reference; it is integrity-verifiable, not reproducible.",
+  "social_preview": {"state": "tracked-candidate-not-uploaded", "path": "docs/assets/brand/derived/social-preview-1280x640.png"},
+  "palette": ["#EEF2FF", "#E0E7FF", "#C7D2FE", "#A5B4FC", "#818CF8", "#6366F1", "#4F46E5", "#4338CA", "#3730A3", "#312E81", "#1E1B4B", "#090A1A", "#F8FAFC"],
+  "immutable_inputs": [
+    {"path": "assets/bot-shield/key-art-bot-shield-v1.png", "bytes": 2025260, "width": 1942, "height": 809, "mode": "RGB", "sha256": "a65fd7cd6bed0f78d2c014aac66592858af5ceaaf323cd1c7a897e0c8a1c1f30"},
+    {"path": "assets/bot-shield/hero-bot-shield-en.png", "bytes": 1740655, "width": 1774, "height": 887, "mode": "RGB", "sha256": "8ec45a4fa7540a53aa34e6b111e7c37b2a8a065cd81123f29670b591d3f28c3a"},
+    {"path": "assets/bot-shield/hero-bot-shield-es.png", "bytes": 1747026, "width": 1774, "height": 887, "mode": "RGB", "sha256": "6cab42b77d45a33fbb02ad3a17f8b00be33238d267250d5a666685ff446a64d6"}
+  ],
+  "derivatives": [
+    {"path": "docs/assets/brand/derived/social-preview-1280x640.png", "bytes": 1121507, "width": 1280, "height": 640, "mode": "RGB", "max_bytes": 1200000, "role": "GitHub social-preview candidate", "sha256": "38757ec01ffd97bf491dd87f4b0849d8f452f5bc58aa4ab95278c1cf11a2c97f"},
+    {"path": "docs/assets/brand/derived/avatar-1024.png", "bytes": 1229587, "width": 1024, "height": 1024, "mode": "RGB", "max_bytes": 1300000, "role": "repository avatar master", "sha256": "363e542bf99ab8469e2a20bbbc45c72abc44fc3b714512810b226a7f075d24d2"},
+    {"path": "docs/assets/brand/derived/avatar-256.png", "bytes": 106446, "width": 256, "height": 256, "mode": "RGB", "max_bytes": 250000, "role": "social avatar", "sha256": "d2bb452944adbfcdad0f2c22265480722ef10c3f5955d4a6d60d9b79a477e849"},
+    {"path": "docs/assets/brand/derived/avatar-128.png", "bytes": 29231, "width": 128, "height": 128, "mode": "RGB", "max_bytes": 100000, "role": "compact avatar", "sha256": "6767cdd5c3194993a2f8705554c79171167a88f00bb25ce89ddd75ea57dadadf"},
+    {"path": "docs/assets/brand/derived/icon-512.png", "bytes": 395497, "width": 512, "height": 512, "mode": "RGB", "max_bytes": 500000, "role": "plugin icon master", "sha256": "2facf3f3409053c72733ecbbc2de5f856582073ec60be8c0fb3be1252a51c58b"},
+    {"path": "docs/assets/brand/derived/icon-180.png", "bytes": 54960, "width": 180, "height": 180, "mode": "RGB", "max_bytes": 150000, "role": "touch icon", "sha256": "6257a17d665434a84731a260e16741860f54dc667bf3e5b20fe1fcd082ae6ea3"},
+    {"path": "docs/assets/brand/derived/icon-64.png", "bytes": 8233, "width": 64, "height": 64, "mode": "RGB", "max_bytes": 50000, "role": "small plugin icon", "sha256": "264cfdc7388f044a126a8f77d7401ae4a0b2054a0d2987d5d786a622661018fe"},
+    {"path": "docs/assets/brand/derived/favicon-32.png", "bytes": 2387, "width": 32, "height": 32, "mode": "RGB", "max_bytes": 20000, "role": "favicon", "sha256": "f886c0cd92f61139a9373f7d11ab79b9cc2b5f43a0b111766ef190531a8d3233"}
+  ],
+  "vector_masters": [
+    {"path": "docs/assets/brand/derived/mark.svg", "bytes": 411, "role": "shield-only compact mark", "sha256": "29ec76b8bd91839cb88132331494bd654b79bd66a573cf45d99842934eb73253"},
+    {"path": "docs/assets/brand/derived/lockup.svg", "bytes": 759, "role": "bot-and-shield lockup", "sha256": "0f22f814c2c1f8ee494e6b88fb6e2b39823ba21441badfabbc2e05ff1a067aa9"}
+  ]
+}
