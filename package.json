@@ -2,6 +2,7 @@
   "name": "opencode-sourcerudder-policy",
   "version": "1.0.0",
   "private": true,
+  "license": "MIT",
   "description": "Upgrade-safe SourceRudder-first policy plugin for OpenCode 1.18.26",
   "type": "module",
   "main": "dist/index.js",
