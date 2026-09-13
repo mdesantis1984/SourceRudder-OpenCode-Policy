@@ -1,8 +1,13 @@
 # Release and Rollback
 
-This repository does not publish npm packages, GitHub releases, or deployments.
-The package remains private, and any publication requires separate maintainer
-authorization.
+[English](release-and-rollback.md) | [Español](release-and-rollback.es.md)
+
+This repository has not yet published npm packages, GitHub releases, or
+deployments. The maintainer authorized the MIT License and a truthful companion
+v1.0.0 release through issue #4. The package remains private until a verified
+allowlist removes legacy and review-only material from its tarball. Creating a
+tag, release, package, or deployment requires separate authorization after final
+`main` verification.
 
 ## Operator installation
 

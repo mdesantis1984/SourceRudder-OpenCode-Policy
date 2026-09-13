@@ -1,5 +1,7 @@
 # Operations
 
+[English](operations.md) | [Español](operations.es.md)
+
 Run local verification without changing an OpenCode installation:
 
 ```sh
