@@ -10,7 +10,8 @@ nativas `websearch` y `webfetch` de OpenCode. Está dirigido a operadores de
 OpenCode que necesitan un límite de política local, pequeño y auditable.
 
 > **Estado:** implementado y verificable localmente. Este proyecto complementario
-> privado no es un fork, una versión publicada ni una publicación de SourceRudder.
+> no es un fork, una versión publicada ni una publicación de SourceRudder. La
+> visibilidad pública está aprobada y se sigue en el [issue #4](https://github.com/mdesantis1984/SourceRudder-OpenCode-Policy/issues/4), pendiente de su puerta de publicación.
 
 ## Relación con SourceRudder
 
@@ -73,7 +74,8 @@ y una entrada de paquete `dist/index.js` que se pueda cargar.
 
 - [Manual operativo](RUNBOOK.md): compilación, instalación, verificación y reversión.
 - [Guía de contribución](CONTRIBUTING.md): desarrollo local y expectativas de revisión.
-- [Política de seguridad](SECURITY.md): orientación para la notificación privada de vulnerabilidades.
+- [Security policy](SECURITY.md): orientación para la notificación de vulnerabilidades en inglés.
+- [Política de seguridad](SECURITY.es.md): orientación para la notificación de vulnerabilidades en español.
 - [Política del repositorio](docs/repository-policy.md): flujo de trabajo previsto y límites de administración de GitHub.
 - [Arquitectura](docs/architecture.md): límites del complemento y flujo en tiempo de ejecución.
 - [Configuración](docs/configuration.md): cambios de configuración propios y límites.
