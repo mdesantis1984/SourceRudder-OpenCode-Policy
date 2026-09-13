@@ -14,6 +14,8 @@ const documentationFiles = [
   "docs/operations.md",
   "docs/development.md",
   "docs/release-and-rollback.md",
+  "docs/brand.md",
+  "docs/brand.es.md",
 ];
 const localLinkPattern = /(?<!!)\[[^\]]+\]\(([^)]+)\)/g;
 const requiredReadmeText = [
