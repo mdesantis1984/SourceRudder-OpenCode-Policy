@@ -1,16 +1,43 @@
-# SourceRudder Policy
+<p align="center">
+  <img src="docs/assets/brand/derived/social-preview-1280x640.png" width="100%" alt="SourceRudder bot beside the separate SourceRudder Policy shield.">
+</p>
+
+<p align="center"><strong>Keep OpenCode research on the governed SourceRudder path without replacing host configuration.</strong></p>
 
 [English](README.md) | [Español](README.es.md)
 
-![A white SourceRudder bot with a magnifying glass alongside a separate luminous policy shield carrying a routing-evidence emblem.](assets/bot-shield/hero-bot-shield-en.png)
+<p align="center">
+  <a href="https://github.com/mdesantis1984/SourceRudder-OpenCode-Policy/actions/workflows/ci.yml"><img alt="CI" src="https://github.com/mdesantis1984/SourceRudder-OpenCode-Policy/actions/workflows/ci.yml/badge.svg?branch=main"></a>
+  <img alt="OpenCode 1.18.26 target" src="https://img.shields.io/badge/OpenCode-1.18.26-6366F1">
+  <img alt="Node.js 24 CI" src="https://img.shields.io/badge/CI_Node.js-24-339933?logo=nodedotjs&amp;logoColor=white">
+  <img alt="Policy 1.0.0" src="https://img.shields.io/badge/policy-1.0.0-4F46E5">
+</p>
 
-An upgrade-safe OpenCode policy plugin that requires SourceRudder-first research
+<p align="center">
+  <a href="#quick-start">Install the policy</a> ·
+  <a href="#policy-boundary">Inspect the boundary</a> ·
+  <a href="#runtime-flow">See the runtime flow</a> ·
+  <a href="RUNBOOK.md">Operate and roll back</a> ·
+  <a href="SECURITY.md">Report securely</a>
+</p>
+
+SourceRudder Policy is an upgrade-safe OpenCode plugin that requires SourceRudder-first research
 while strictly blocking OpenCode's native `websearch` and `webfetch` tools.
 It is for OpenCode operators who need a small, auditable local policy boundary.
 
 > **Status:** implemented and locally verifiable. This companion project is not a fork,
 > release, or publication of SourceRudder. Public visibility is approved
 > and tracked by [issue #4](https://github.com/mdesantis1984/SourceRudder-OpenCode-Policy/issues/4), pending its publication gate.
+> The CI badge targets `main` and becomes anonymous public evidence only after that gate completes.
+
+## Why this policy
+
+| What operators need | What this companion provides |
+| --- | --- |
+| A predictable research route | SourceRudder-first guidance names the exact tool for each supported evidence source. |
+| A hard native-tool boundary | Merged permissions deny `websearch` and `webfetch`; the before hook rejects direct calls too. |
+| Safe coexistence with OpenCode | Unrelated permissions and host system text survive policy installation and refresh. |
+| Reviewable behavior | A small TypeScript surface, an exact tracked tool-name set, bounded attempt state, and Node tests expose the contract. |
 
 ## Relationship to SourceRudder
 
@@ -18,6 +45,28 @@ This plugin complements the public [SourceRudder MCP research gateway](https://g
 It does not bundle, configure, publish, or operate that upstream project. It only
 adds local OpenCode policy guidance and runtime checks around native research
 tools.
+
+<a id="runtime-flow"></a>
+
+## How it works
+
+```mermaid
+flowchart LR
+    O["OpenCode session"] --> P["SourceRudder Policy plugin"]
+    P --> C["Configuration hook"]
+    C --> D["Deny native websearch and webfetch"]
+    P --> G["System guidance transform"]
+    G --> R["Route research to exact SourceRudder tools"]
+    P --> H["Tool hooks"]
+    H --> B["Reject native calls"]
+    H --> U["Bound identical unresolved attempts"]
+    R -. "separately configured MCP" .-> S["SourceRudder"]
+```
+
+The plugin governs OpenCode in memory. It does not proxy research, start
+SourceRudder, or change the separately configured MCP connection.
+
+<a id="quick-start"></a>
 
 ## Quick start
 
@@ -45,6 +94,8 @@ tools.
 The expected local success signal is a passing Node test run and a loadable
 `dist/index.js` package entry.
 
+<a id="policy-boundary"></a>
+
 ## What the policy enforces
 
 | Area                      | Behavior                                                                                                                                |
@@ -65,6 +116,13 @@ The expected local success signal is a passing Node test run and a loadable
   signal for the plugin to classify.
 - The plugin targets `@opencode-ai/plugin` `1.18.26` and changes only in-memory
   merged configuration.
+
+## Choose your path
+
+- **Operate it:** follow the [runbook](RUNBOOK.md) for installation, success signals, and rollback.
+- **Review the boundary:** inspect [architecture](docs/architecture.md) and [configuration](docs/configuration.md).
+- **Contribute safely:** use the [contributing guide](CONTRIBUTING.md) and approved-issue workflow.
+- **Audit publication:** read the [repository policy](docs/repository-policy.md) and [security policy](SECURITY.md).
 
 ## Documentation
 
