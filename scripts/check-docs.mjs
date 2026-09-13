@@ -18,11 +18,31 @@ const documentationFiles = [
   "docs/brand.es.md",
 ];
 const localLinkPattern = /(?<!!)\[[^\]]+\]\(([^)]+)\)/g;
-const requiredReadmeText = [
-  "https://github.com/mdesantis1984/SourceRudder",
-  "not a fork",
-  "Public visibility is approved",
-];
+const htmlTargetPattern = /\b(?:href|src)="([^"]+)"/g;
+const readmeRequirements = {
+  "README.md": [
+    "https://github.com/mdesantis1984/SourceRudder",
+    "not a fork",
+    "Public visibility is approved",
+    "docs/assets/brand/derived/social-preview-1280x640.png",
+    "actions/workflows/ci.yml/badge.svg?branch=main",
+    "## Why this policy",
+    "## How it works",
+    "## Choose your path",
+    "](README.es.md)",
+  ],
+  "README.es.md": [
+    "https://github.com/mdesantis1984/SourceRudder",
+    "no es un fork",
+    "La visibilidad pública está aprobada",
+    "docs/assets/brand/derived/social-preview-1280x640.png",
+    "actions/workflows/ci.yml/badge.svg?branch=main",
+    "## Por qué esta política",
+    "## Cómo funciona",
+    "## Elija su ruta",
+    "](README.md)",
+  ],
+};
 
 for (const file of documentationFiles) {
   const content = await readFile(file, "utf8");
@@ -31,12 +51,25 @@ for (const file of documentationFiles) {
     if (/^(https?:|#|mailto:)/.test(target)) continue;
     await access(resolve(dirname(file), target.split("#")[0]));
   }
+  for (const match of content.matchAll(htmlTargetPattern)) {
+    const target = match[1];
+    if (/^(https?:|mailto:)/.test(target)) continue;
+    if (target.startsWith("#")) {
+      if (!content.includes(`id="${target.slice(1)}"`)) {
+        throw new Error(`${file} contains an unresolved HTML fragment: ${target}`);
+      }
+      continue;
+    }
+    await access(resolve(dirname(file), target.split("#")[0]));
+  }
 }
 
-const readme = await readFile("README.md", "utf8");
-for (const text of requiredReadmeText) {
-  if (!readme.includes(text)) {
-    throw new Error(`README.md must include required project relationship text: ${text}`);
+for (const [file, requirements] of Object.entries(readmeRequirements)) {
+  const content = await readFile(file, "utf8");
+  for (const text of requirements) {
+    if (!content.includes(text)) {
+      throw new Error(`${file} must include required product-front-door text: ${text}`);
+    }
   }
 }
 
