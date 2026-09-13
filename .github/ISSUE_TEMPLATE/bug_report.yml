@@ -3,6 +3,7 @@ description: Report an unexpected policy-plugin behavior.
 title: "fix: "
 labels:
   - bug
+  - needs-review
 body:
   - type: markdown
     attributes:
