@@ -9,6 +9,8 @@ administrator action and platform readback.
 | Topic                 | Current evidence                    | Intended state                                   |
 | --------------------- | ----------------------------------- | ------------------------------------------------ |
 | Visibility            | Private repository target           | Remain private.                                  |
+| Default branch        | `main` at `665b8a0`                 | Use `main` for authorized releases.              |
+| Development branch    | `develop` at `665b8a0`              | Use as the integration branch.                   |
 | Package publication   | `private: true` in `package.json`   | No npm publication.                              |
 | Upstream relationship | README links to public SourceRudder | Companion plugin; not a fork.                    |
 | Automation            | `.github/workflows/ci.yml`          | Run verification for pushes and pull requests.   |
@@ -17,14 +19,15 @@ administrator action and platform readback.
 
 ## Intended GitHub controls
 
-After `main` and `develop` exist, an administrator should attempt classic branch
-protection and read back the actual result. The desired controls are required
-pull-request review, passing CI, restricted force pushes, and restricted branch
-deletions. These controls are not enabled or enforced by this document or CI.
+Classic protection was attempted after `main` and `develop` were created, but
+GitHub returned HTTP 403 because private branch protection is unavailable on the
+current plan. Rulesets are also unavailable under that plan. Both branches are
+currently unprotected.
 
-Repository rulesets are unavailable for this private target under the current
-GitHub plan limitation. The repository must remain private; do not change
-visibility merely to enable rulesets.
+The desired controls remain pull-request review, passing CI, restricted force
+pushes, and restricted branch deletions. They are not enabled or enforced by this
+document or CI. GitHub Pro is required to enable private protection; the
+repository must remain private and must not be made public to obtain that feature.
 
 ## Intended contribution path
 

@@ -47,10 +47,13 @@ Hotfixes begin from `main`, merge through their intended pull-request path, then
 reverse sync to `develop`.
 
 This is a documented target workflow, not an enforced GitHub rule. Repository
-administrators must configure and read back branch protection separately after
-the branches exist. Keep future planned reviews at or below 400 changed lines
-unless a maintainer explicitly records an exception. The authorized initial
-repository import is a bootstrap, not an ordinary pull request under that limit.
+administrators attempted protection after `main` and `develop` were created, but
+it is unavailable for this private repository on the current plan. Human process
+and approval provenance remain required without platform enforcement. GitHub Pro
+is required for private protection; do not make the repository public to enable
+it. Keep future planned reviews at or below 400 changed lines unless a maintainer
+explicitly records an exception. The authorized initial repository import is a
+bootstrap, not an ordinary pull request under that limit.
 
 ## License and authorization
 
