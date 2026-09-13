@@ -1,5 +1,9 @@
 # SourceRudder Policy
 
+[English](README.md) | [Español](README.es.md)
+
+![A white SourceRudder bot with a magnifying glass alongside a separate luminous policy shield carrying a routing-evidence emblem.](assets/bot-shield/hero-bot-shield-en.png)
+
 An upgrade-safe OpenCode policy plugin that requires SourceRudder-first research
 while strictly blocking OpenCode's native `websearch` and `webfetch` tools.
 It is for OpenCode operators who need a small, auditable local policy boundary.
