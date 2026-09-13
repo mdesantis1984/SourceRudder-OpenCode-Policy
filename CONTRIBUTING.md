@@ -1,8 +1,8 @@
 # Contributing
 
 Contributions should keep the policy boundary narrow, testable, and explicit.
-This repository is a private companion to SourceRudder, not a fork of its public
-upstream project.
+This repository is a companion to SourceRudder, not a fork of its upstream
+project.
 
 ## Local development
 
@@ -48,12 +48,12 @@ reverse sync to `develop`.
 
 This is a documented target workflow, not an enforced GitHub rule. Repository
 administrators attempted protection after `main` and `develop` were created, but
-it is unavailable for this private repository on the current plan. Human process
-and approval provenance remain required without platform enforcement. GitHub Pro
-is required for private protection; do not make the repository public to enable
-it. Keep future planned reviews at or below 400 changed lines unless a maintainer
-explicitly records an exception. The authorized initial repository import is a
-bootstrap, not an ordinary pull request under that limit.
+it was unavailable on the private repository plan at the 2026-09-13 readback.
+Human process and approval provenance remain required without platform
+enforcement. Settings and branch protections must be re-read after the approved
+public conversion in issue #4. Keep future planned reviews at or below 400 changed
+lines unless a maintainer explicitly records an exception. The authorized initial
+repository import is a bootstrap, not an ordinary pull request under that limit.
 
 ## License and authorization
 

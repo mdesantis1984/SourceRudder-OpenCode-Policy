@@ -1,33 +1,33 @@
 # Repository Policy
 
-This document records the intended operating model for this private repository.
-It distinguishes local repository artifacts from GitHub settings, which require
-administrator action and platform readback.
+This document records the intended operating model. It distinguishes local
+repository artifacts from GitHub settings, which require administrator action and
+platform readback.
 
 ## Current profile
 
 | Topic                 | Current evidence                    | Intended state                                   |
 | --------------------- | ----------------------------------- | ------------------------------------------------ |
-| Visibility            | Private repository target           | Remain private.                                  |
-| Default branch        | `main` at `665b8a0`                 | Use `main` for authorized releases.              |
-| Development branch    | `develop` at `665b8a0`              | Use as the integration branch.                   |
+| Visibility            | Private repository, read 2026-09-13 | Public conversion approved in issue #4; pending publication gate. |
+| Default branch        | `main` at `033512c`                 | Use `main` for authorized releases.              |
+| Development branch    | `develop` at `033512c`              | Use as the integration branch.                   |
 | Package publication   | `private: true` in `package.json`   | No npm publication.                              |
 | Upstream relationship | README links to public SourceRudder | Companion plugin; not a fork.                    |
 | Automation            | `.github/workflows/ci.yml`          | Run verification for pushes and pull requests.   |
 | Licensing             | No license file                     | No license granted; maintainer decision pending. |
-| Security reporting    | `SECURITY.md`                       | Use existing private collaboration channels.     |
+| Security reporting    | `SECURITY.md`                       | Use GitHub private reporting when enabled; otherwise request a private channel through a minimal public issue. |
 
 ## Intended GitHub controls
 
 Classic protection was attempted after `main` and `develop` were created, but
 GitHub returned HTTP 403 because private branch protection is unavailable on the
-current plan. Rulesets are also unavailable under that plan. Both branches are
-currently unprotected.
+current plan. Rulesets are also unavailable under that plan. Both branches were
+unprotected at the 2026-09-13 readback.
 
 The desired controls remain pull-request review, passing CI, restricted force
 pushes, and restricted branch deletions. They are not enabled or enforced by this
-document or CI. GitHub Pro is required to enable private protection; the
-repository must remain private and must not be made public to obtain that feature.
+document or CI. GitHub settings and branch protections must be re-read after
+conversion; this document does not prove their post-conversion state.
 
 ## Intended contribution path
 
