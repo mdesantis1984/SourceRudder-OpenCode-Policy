@@ -11,6 +11,7 @@
   <img alt="Objetivo OpenCode 1.18.26" src="https://img.shields.io/badge/OpenCode-1.18.26-6366F1">
   <img alt="CI con Node.js 24" src="https://img.shields.io/badge/CI_Node.js-24-339933?logo=nodedotjs&amp;logoColor=white">
   <img alt="Política 1.0.0" src="https://img.shields.io/badge/policy-1.0.0-4F46E5">
+  <a href="LICENSE"><img alt="Licencia MIT" src="https://img.shields.io/badge/license-MIT-334155"></a>
 </p>
 
 <p align="center">
@@ -132,6 +133,7 @@ y una entrada de paquete `dist/index.js` que se pueda cargar.
 
 - [Manual operativo](RUNBOOK.md): compilación, instalación, verificación y reversión.
 - [Guía de contribución](CONTRIBUTING.md): desarrollo local y expectativas de revisión.
+- [Código de Conducta](CODE_OF_CONDUCT.es.md): colaboración y límites de reporte privado.
 - [Security policy](SECURITY.md): orientación para la notificación de vulnerabilidades en inglés.
 - [Política de seguridad](SECURITY.es.md): orientación para la notificación de vulnerabilidades en español.
 - [Política del repositorio](docs/repository-policy.md): flujo de trabajo previsto y límites de administración de GitHub.
@@ -154,8 +156,6 @@ npm run check:package
 npm run check:docs
 ```
 
-## Estado de la licencia
+## Licencia
 
-Este repositorio no concede ninguna licencia. Las licencias siguen siendo una
-decisión de mantenimiento; no se deben asumir derechos de reutilización,
-redistribución ni publicación.
+SourceRudder Policy está disponible bajo la [Licencia MIT](LICENSE).

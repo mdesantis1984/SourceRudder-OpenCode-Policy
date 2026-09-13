@@ -2,7 +2,7 @@
 
 Contributions should keep the policy boundary narrow, testable, and explicit.
 This repository is a companion to SourceRudder, not a fork of its upstream
-project.
+project. Participation must follow the [Code of Conduct](CODE_OF_CONDUCT.md).
 
 ## Local development
 
@@ -57,6 +57,6 @@ repository import is a bootstrap, not an ordinary pull request under that limit.
 
 ## License and authorization
 
-No license is granted by this repository. Do not submit third-party material or
-assume that contribution or reuse rights have been established without maintainer
-authorization.
+Contributions are submitted under the repository [MIT License](LICENSE). Submit
+only work you are authorized to license, preserve required third-party notices,
+and identify any external material in the pull request.

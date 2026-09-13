@@ -11,6 +11,7 @@
   <img alt="OpenCode 1.18.26 target" src="https://img.shields.io/badge/OpenCode-1.18.26-6366F1">
   <img alt="Node.js 24 CI" src="https://img.shields.io/badge/CI_Node.js-24-339933?logo=nodedotjs&amp;logoColor=white">
   <img alt="Policy 1.0.0" src="https://img.shields.io/badge/policy-1.0.0-4F46E5">
+  <a href="LICENSE"><img alt="MIT license" src="https://img.shields.io/badge/license-MIT-334155"></a>
 </p>
 
 <p align="center">
@@ -128,6 +129,7 @@ The expected local success signal is a passing Node test run and a loadable
 
 - [Runbook](RUNBOOK.md): build, installation, verification, and rollback.
 - [Contributing guide](CONTRIBUTING.md): local development and review expectations.
+- [Code of Conduct](CODE_OF_CONDUCT.md): collaboration and private reporting boundaries.
 - [Security policy](SECURITY.md): vulnerability reporting guidance in English.
 - [Política de seguridad](SECURITY.es.md): guía de notificación de vulnerabilidades en español.
 - [Repository policy](docs/repository-policy.md): intended workflow and GitHub
@@ -152,7 +154,6 @@ npm run check:package
 npm run check:docs
 ```
 
-## License status
+## License
 
-No license is granted by this repository. Licensing remains a maintainer decision;
-do not assume reuse, redistribution, or publication rights.
+SourceRudder Policy is available under the [MIT License](LICENSE).
