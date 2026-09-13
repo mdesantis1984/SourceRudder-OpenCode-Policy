@@ -18,7 +18,7 @@
   <a href="#quick-start">Instalar la política</a> ·
   <a href="#policy-boundary">Examinar el límite</a> ·
   <a href="#runtime-flow">Ver el flujo de ejecución</a> ·
-  <a href="RUNBOOK.md">Operar y revertir</a> ·
+  <a href="RUNBOOK.es.md">Operar y revertir</a> ·
   <a href="SECURITY.es.md">Informar de forma segura</a>
 </p>
 
@@ -93,7 +93,7 @@ no inicia SourceRudder ni modifica la conexión MCP configurada por separado.
 
 4. Copie `dist/sourcerudder-policy-v1.0.0.js` en la raíz del directorio de
    complementos de OpenCode y reinicie OpenCode. Consulte el
-   [manual operativo](RUNBOOK.md) para el procedimiento completo y reversible.
+   [manual operativo](RUNBOOK.es.md) para el procedimiento completo y reversible.
 
 La señal local de éxito esperada es una ejecución de pruebas de Node satisfactoria
 y una entrada de paquete `dist/index.js` que se pueda cargar.
@@ -124,16 +124,17 @@ y una entrada de paquete `dist/index.js` que se pueda cargar.
 
 ## Elija su ruta
 
-- **Operarlo:** siga el [manual operativo](RUNBOOK.md) para la instalación, las señales de éxito y la reversión.
+- **Operarlo:** siga el [manual operativo](RUNBOOK.es.md) para la instalación, las señales de éxito y la reversión.
 - **Revisar el límite:** consulte la [arquitectura](docs/architecture.md) y la [configuración](docs/configuration.md).
-- **Contribuir con seguridad:** utilice la [guía de contribución](CONTRIBUTING.md) y el flujo de issues aprobados.
+- **Contribuir con seguridad:** utilice la [guía de contribución](CONTRIBUTING.es.md) y el flujo de issues aprobados.
 - **Auditar la publicación:** lea la [política del repositorio](docs/repository-policy.md) y la [política de seguridad](SECURITY.es.md).
 
 ## Documentación
 
-- [Manual operativo](RUNBOOK.md): compilación, instalación, verificación y reversión.
-- [Guía de contribución](CONTRIBUTING.md): desarrollo local y expectativas de revisión.
+- [Manual operativo](RUNBOOK.es.md): compilación, instalación, verificación y reversión.
+- [Guía de contribución](CONTRIBUTING.es.md): desarrollo local y expectativas de revisión.
 - [Código de Conducta](CODE_OF_CONDUCT.es.md): colaboración y límites de reporte privado.
+- [Reconocimientos](ACKNOWLEDGEMENTS.es.md): créditos verificados del proyecto y la comunidad.
 - [Security policy](SECURITY.md): orientación para la notificación de vulnerabilidades en inglés.
 - [Política de seguridad](SECURITY.es.md): orientación para la notificación de vulnerabilidades en español.
 - [Política del repositorio](docs/repository-policy.md): flujo de trabajo previsto y límites de administración de GitHub.

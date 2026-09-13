@@ -5,7 +5,11 @@ const documentationFiles = [
   "README.md",
   "README.es.md",
   "RUNBOOK.md",
+  "RUNBOOK.es.md",
   "CONTRIBUTING.md",
+  "CONTRIBUTING.es.md",
+  "ACKNOWLEDGEMENTS.md",
+  "ACKNOWLEDGEMENTS.es.md",
   "CODE_OF_CONDUCT.md",
   "CODE_OF_CONDUCT.es.md",
   "LICENSE",
@@ -34,6 +38,7 @@ const readmeRequirements = {
     "## How it works",
     "## Choose your path",
     "## License",
+    "ACKNOWLEDGEMENTS.md",
     "](README.es.md)",
   ],
   "README.es.md": [
@@ -47,6 +52,9 @@ const readmeRequirements = {
     "## Cómo funciona",
     "## Elija su ruta",
     "## Licencia",
+    "ACKNOWLEDGEMENTS.es.md",
+    "CONTRIBUTING.es.md",
+    "RUNBOOK.es.md",
     "](README.md)",
   ],
 };
@@ -89,6 +97,12 @@ for (const [file, content, counterpart] of [
   ["SECURITY.es.md", securitySpanish, "SECURITY.md"],
   ["CODE_OF_CONDUCT.md", conduct, "CODE_OF_CONDUCT.es.md"],
   ["CODE_OF_CONDUCT.es.md", conductSpanish, "CODE_OF_CONDUCT.md"],
+  ["CONTRIBUTING.md", await readFile("CONTRIBUTING.md", "utf8"), "CONTRIBUTING.es.md"],
+  ["CONTRIBUTING.es.md", await readFile("CONTRIBUTING.es.md", "utf8"), "CONTRIBUTING.md"],
+  ["RUNBOOK.md", await readFile("RUNBOOK.md", "utf8"), "RUNBOOK.es.md"],
+  ["RUNBOOK.es.md", await readFile("RUNBOOK.es.md", "utf8"), "RUNBOOK.md"],
+  ["ACKNOWLEDGEMENTS.md", await readFile("ACKNOWLEDGEMENTS.md", "utf8"), "ACKNOWLEDGEMENTS.es.md"],
+  ["ACKNOWLEDGEMENTS.es.md", await readFile("ACKNOWLEDGEMENTS.es.md", "utf8"), "ACKNOWLEDGEMENTS.md"],
 ]) {
   if (!content.includes(`](${counterpart})`)) {
     throw new Error(`${file} must link to ${counterpart}`);

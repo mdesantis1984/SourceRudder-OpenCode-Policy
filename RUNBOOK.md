@@ -1,5 +1,7 @@
 # SourceRudder Policy Runbook
 
+[English](RUNBOOK.md) | [Español](RUNBOOK.es.md)
+
 This runbook describes a local, copy-based installation of the versioned policy
 bundle. It does not publish a package or change global configuration by itself.
 
@@ -39,7 +41,7 @@ Do not modify `~/.config/opencode` from this repository's build or test process.
 
 Native `websearch` and `webfetch` are denied in the config hook and rejected at
 the tool boundary on every call; no approval or fallback path exists. The guard is
-session-scoped and applies only to the exact SourceRudder allowlist. Attempts one
+session-scoped and applies only to the exact tracked SourceRudder tool-name set. Attempts one
 through eleven are allowed; attempt twelve is blocked. Missing
 `tool.execute.after` is UNKNOWN/unresolved, not a confirmed transport failure.
 This change does not block Bash, other MCP tools, or provider-side actions outside
