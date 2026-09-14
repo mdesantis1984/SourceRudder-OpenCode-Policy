@@ -22,7 +22,7 @@ test("PR policy validates metadata without executing pull request code", async (
   assert.match(workflow, /exactly one type:\* label/);
   assert.match(workflow, /const releasePattern = \/\^release\\\//);
   assert.match(workflow, /pr\.base\.ref === 'main'/);
-  assert.match(workflow, /Branch .*type\/description naming/);
+  assert.match(workflow, /type\/description naming, or release\/\*/);
   assert.match(workflow, /PR title must follow Conventional Commits/);
 });
 
@@ -56,4 +56,22 @@ test("security policies are checked, linked, and available from both READMEs", a
     assert.match(content, /security\/advisories\/new/);
     assert.match(content, /private (reporting )?channel|canal privado/i);
   }
+});
+
+test("release gate verifies assets without publishing or receiving write access", async () => {
+  const workflow = await repositoryFile(".github/workflows/release-gate.yml");
+
+  assert.match(workflow, /pull_request:/);
+  assert.match(workflow, /push:/);
+  assert.match(workflow, /if: github\.event_name == 'push' \|\| startsWith\(github\.head_ref, 'release\/'\)/);
+  assert.match(workflow, /if: github\.event_name == 'pull_request'/);
+  assert.doesNotMatch(workflow, /pull_request_target:/);
+  assert.match(workflow, /contents: read/);
+  assert.match(workflow, /persist-credentials: false/);
+  assert.match(workflow, /npm run release:prepare/);
+  assert.match(workflow, /sourcerudder-policy-\$\{\{ github\.sha \}\}/);
+  assert.match(workflow, /actions\/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7\.0\.1/);
+  assert.match(workflow, /actions\/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7\.0\.0/);
+  assert.match(workflow, /actions\/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7\.0\.1/);
+  assert.doesNotMatch(workflow, /npm publish|gh release|contents: write/);
 });

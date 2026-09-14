@@ -1,0 +1,57 @@
+name: Release gate
+
+on:
+  pull_request:
+    branches:
+      - main
+  push:
+    branches:
+      - main
+
+permissions:
+  contents: read
+
+concurrency:
+  group: release-gate-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  verify:
+    name: Verify release candidate
+    if: github.event_name == 'push' || startsWith(github.head_ref, 'release/')
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    env:
+      RELEASE_BRANCH: ${{ github.head_ref }}
+    steps:
+      - name: Require an internal release branch
+        if: github.event_name == 'pull_request'
+        env:
+          HEAD_REPOSITORY: ${{ github.event.pull_request.head.repo.full_name }}
+          TARGET_REPOSITORY: ${{ github.repository }}
+        run: |
+          node --input-type=module -e '
+            import assert from "node:assert/strict";
+            assert.equal(process.env.HEAD_REPOSITORY, process.env.TARGET_REPOSITORY, "release branch must belong to this repository");
+            assert.match(process.env.RELEASE_BRANCH, /^release\/[a-z0-9._-]+$/, "release branch must use release/* naming");
+          '
+      - name: Check out release candidate
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - name: Set up Node.js
+        uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
+        with:
+          node-version: 24
+          cache: npm
+      - name: Install dependencies
+        run: npm ci --ignore-scripts
+      - name: Prepare verified release assets
+        run: npm run release:prepare
+      - name: Upload release candidate
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
+        with:
+          name: sourcerudder-policy-${{ github.sha }}
+          path: release/
+          if-no-files-found: error
+          retention-days: 7

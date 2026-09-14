@@ -18,7 +18,11 @@ npm run typecheck
 npm test
 npm run check:package
 npm run check:docs
+npm run release:prepare
 ```
 
 `npm test` builds `dist/` before executing compiled tests. Generated output and
-dependencies are ignored and must not be committed.
+dependencies are ignored and must not be committed. `check:package` creates the
+allowlisted tarball in temporary storage, installs it without lifecycle scripts,
+and imports its default entry. `release:prepare` additionally creates the ignored
+versioned bundle and SHA-256 checksum under `release/`; it does not publish them.
