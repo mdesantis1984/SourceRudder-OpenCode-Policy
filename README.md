@@ -8,8 +8,9 @@ An upgrade-safe OpenCode policy plugin that requires SourceRudder-first research
 while strictly blocking OpenCode's native `websearch` and `webfetch` tools.
 It is for OpenCode operators who need a small, auditable local policy boundary.
 
-> **Status:** implemented and locally verifiable. This private companion project
-> is not a fork, release, or publication of SourceRudder.
+> **Status:** implemented and locally verifiable. This companion project is not a fork,
+> release, or publication of SourceRudder. Public visibility is approved
+> and tracked by [issue #4](https://github.com/mdesantis1984/SourceRudder-OpenCode-Policy/issues/4), pending its publication gate.
 
 ## Relationship to SourceRudder
 
@@ -69,7 +70,8 @@ The expected local success signal is a passing Node test run and a loadable
 
 - [Runbook](RUNBOOK.md): build, installation, verification, and rollback.
 - [Contributing guide](CONTRIBUTING.md): local development and review expectations.
-- [Security policy](SECURITY.md): private vulnerability reporting guidance.
+- [Security policy](SECURITY.md): vulnerability reporting guidance in English.
+- [Política de seguridad](SECURITY.es.md): guía de notificación de vulnerabilidades en español.
 - [Repository policy](docs/repository-policy.md): intended workflow and GitHub
   administration boundaries.
 - [Architecture](docs/architecture.md): plugin boundaries and runtime flow.
