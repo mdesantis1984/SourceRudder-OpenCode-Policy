@@ -20,6 +20,8 @@ test("PR policy validates metadata without executing pull request code", async (
   assert.match(workflow, /Closes #N, Fixes #N, or Resolves #N/);
   assert.match(workflow, /status:approved/);
   assert.match(workflow, /exactly one type:\* label/);
+  assert.match(workflow, /const releasePattern = \/\^release\\\//);
+  assert.match(workflow, /pr\.base\.ref === 'main'/);
   assert.match(workflow, /Branch .*type\/description naming/);
   assert.match(workflow, /PR title must follow Conventional Commits/);
 });
