@@ -18,6 +18,7 @@ npm run typecheck
 npm test
 npm run check:package
 npm run check:docs
+npm run check:history
 npm run release:prepare
 ```
 
@@ -27,3 +28,7 @@ generada y las dependencias se ignoran y no deben incluirse en commits.
 instala sin scripts de ciclo de vida e importa su entrada predeterminada.
 `release:prepare` también crea el bundle versionado y su checksum SHA-256 ignorados
 en `release/`; no los publica.
+`check:history` revisa el worktree rastreado y cada árbol de commit alcanzable para
+detectar formatos de credenciales, email personal, rutas privadas, nombres de archivos
+sensibles y URL inseguras de redes privadas sin imprimir el contenido coincidente. El workflow de
+release también ejecuta `check:public` para rechazar claims privados obsoletos.

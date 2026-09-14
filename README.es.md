@@ -125,9 +125,9 @@ y una entrada de paquete `dist/index.js` que se pueda cargar.
 ## Elija su ruta
 
 - **Operarlo:** siga el [manual operativo](RUNBOOK.es.md) para la instalación, las señales de éxito y la reversión.
-- **Revisar el límite:** consulte la [arquitectura](docs/architecture.md) y la [configuración](docs/configuration.md).
+- **Revisar el límite:** consulte la [arquitectura](docs/architecture.es.md) y la [configuración](docs/configuration.es.md).
 - **Contribuir con seguridad:** utilice la [guía de contribución](CONTRIBUTING.es.md) y el flujo de issues aprobados.
-- **Auditar la publicación:** lea la [política del repositorio](docs/repository-policy.md) y la [política de seguridad](SECURITY.es.md).
+- **Auditar la publicación:** lea la [política del repositorio](docs/repository-policy.es.md) y la [política de seguridad](SECURITY.es.md).
 
 ## Documentación
 
@@ -138,6 +138,7 @@ y una entrada de paquete `dist/index.js` que se pueda cargar.
 - [Security policy](SECURITY.md): orientación para la notificación de vulnerabilidades en inglés.
 - [Política de seguridad](SECURITY.es.md): orientación para la notificación de vulnerabilidades en español.
 - [Política del repositorio](docs/repository-policy.es.md): flujo de trabajo previsto y límites de administración de GitHub.
+- [Matriz del perfil de SourceRudder](docs/profile-matrix.es.md): familias de artefactos adoptadas, adaptadas, diferidas, prohibidas y no aplicables.
 - [Arquitectura](docs/architecture.es.md): límites del complemento y flujo en tiempo de ejecución.
 - [Configuración](docs/configuration.es.md): cambios de configuración propios y límites.
 - [Operaciones](docs/operations.es.md): verificación local y señales operativas.

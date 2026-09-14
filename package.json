@@ -28,7 +28,9 @@
     "test": "npm run build && node --test dist/test/*.test.js",
     "check:package": "node scripts/check-package.mjs",
     "check:docs": "node scripts/check-docs.mjs",
-    "check": "npm run typecheck && npm test && npm run check:package",
+    "check:history": "node scripts/check-history.mjs",
+    "check:public": "node scripts/check-history.mjs --public",
+    "check": "npm run check:history && npm run typecheck && npm test && npm run check:package",
     "release:prepare": "npm run check && npm run check:docs && node scripts/prepare-release.mjs",
     "prepublishOnly": "npm run check && npm run check:docs"
   },

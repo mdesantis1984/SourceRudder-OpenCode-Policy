@@ -18,6 +18,7 @@ npm run typecheck
 npm test
 npm run check:package
 npm run check:docs
+npm run check:history
 npm run release:prepare
 ```
 
@@ -26,3 +27,7 @@ dependencies are ignored and must not be committed. `check:package` creates the
 allowlisted tarball in temporary storage, installs it without lifecycle scripts,
 and imports its default entry. `release:prepare` additionally creates the ignored
 versioned bundle and SHA-256 checksum under `release/`; it does not publish them.
+`check:history` scans the tracked worktree and every reachable commit tree for
+credential formats, personal email, private paths, sensitive filenames, and unsafe
+private-network URLs without printing matched content. The release workflow additionally runs `check:public`
+to reject stale private-only status claims.

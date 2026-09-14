@@ -135,6 +135,8 @@ The expected local success signal is a passing Node test run and a loadable
 - [Política de seguridad](SECURITY.es.md): guía de notificación de vulnerabilidades en español.
 - [Repository policy](docs/repository-policy.md): intended workflow and GitHub
   administration boundaries.
+- [SourceRudder profile matrix](docs/profile-matrix.md): adopted, adapted,
+  deferred, prohibited, and non-applicable artifact families.
 - [Architecture](docs/architecture.md): plugin boundaries and runtime flow.
 - [Configuration](docs/configuration.md): owned configuration changes and limits.
 - [Operations](docs/operations.md): local verification and operational signals.
