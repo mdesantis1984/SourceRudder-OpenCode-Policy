@@ -27,9 +27,10 @@ investigación con SourceRudder primero y bloquea estrictamente las herramientas
 nativas `websearch` y `webfetch` de OpenCode. Está dirigido a operadores de
 OpenCode que necesitan un límite de política local, pequeño y auditable.
 
-> **Estado:** implementado y verificable localmente. Este proyecto complementario
-> no es un fork, una versión publicada ni una publicación de SourceRudder.
-> La visibilidad pública está aprobada y se sigue en el [issue #4](https://github.com/mdesantis1984/SourceRudder-OpenCode-Policy/issues/4), pendiente de su puerta de publicación.
+> **Estado:** candidato de release verificado. Este proyecto complementario no es un fork
+> ni una publicación de SourceRudder. El repositorio permanece privado
+> mientras GitHub Support elimina las referencias reescritas de pull requests; el
+> cutover se sigue en el [issue #4](https://github.com/mdesantis1984/SourceRudder-OpenCode-Policy/issues/4).
 > El badge de CI apunta a `main` y solo será evidencia pública anónima después de completar esa puerta.
 
 ## Por qué esta política

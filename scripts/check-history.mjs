@@ -84,6 +84,15 @@ if (options.has("--public")) {
   for (const [content, pattern, message] of staleClaims) {
     if (pattern.test(content)) throw new Error(message);
   }
+  const publicationClaims = [
+    [readme, /Release candidate verified|Publicly available/i, "README.md lacks a publication status"],
+    [spanishReadme, /Candidato de release verificado|Disponible públicamente/i, "README.es.md lacks a publication status"],
+    [policy, /GitHub readback remains private|Public repository/i, "repository policy lacks a visibility readback"],
+    [spanishPolicy, /La lectura de GitHub continúa privada|Repositorio público/i, "Spanish repository policy lacks a visibility readback"],
+  ];
+  for (const [content, pattern, message] of publicationClaims) {
+    if (!pattern.test(content)) throw new Error(message);
+  }
   assert.equal(packageMetadata.private, false, "public package metadata must remain publishable");
 }
 

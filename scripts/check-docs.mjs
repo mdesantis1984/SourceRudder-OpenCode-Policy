@@ -38,7 +38,7 @@ const readmeRequirements = {
   "README.md": [
     "https://github.com/mdesantis1984/SourceRudder",
     "not a fork",
-    "Public visibility is approved",
+    "release candidate verified",
     "docs/assets/brand/derived/social-preview-1280x640.png",
     "actions/workflows/ci.yml/badge.svg?branch=main",
     "img.shields.io/badge/license-MIT-334155",
@@ -52,7 +52,7 @@ const readmeRequirements = {
   "README.es.md": [
     "https://github.com/mdesantis1984/SourceRudder",
     "no es un fork",
-    "La visibilidad pública está aprobada",
+    "candidato de release verificado",
     "docs/assets/brand/derived/social-preview-1280x640.png",
     "actions/workflows/ci.yml/badge.svg?branch=main",
     "img.shields.io/badge/license-MIT-334155",

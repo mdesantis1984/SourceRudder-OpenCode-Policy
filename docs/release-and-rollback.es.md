@@ -10,6 +10,10 @@ instalación temporal y metadata de acceso público lo dejan listo para publicac
 sin publicarlo. Crear un tag, release, paquete o deployment requiere autorización
 separada después de verificar el estado final de `main`.
 
+El candidato de release aprobó sus puertas locales y de `develop` el 2026-09-14. El
+repositorio permanece privado hasta que GitHub Support confirme la eliminación de
+refs reescritas de pull requests; este estado de candidato no es disponibilidad pública.
+
 La puerta de release sin privilegios acepta un pull request interno
 `release/v1.0.0` hacia `main`, repite las comprobaciones del repositorio y del
 paquete, y sube el bundle versionado más su checksum SHA-256 como artefacto por

@@ -10,7 +10,7 @@ administrador y lectura posterior de la plataforma.
 
 | Tema | Evidencia actual | Estado previsto |
 | --- | --- | --- |
-| Visibilidad | Repositorio privado, lectura del 2026-09-13 | Conversión pública aprobada en el issue #4; pendiente de la puerta de publicación. |
+| Visibilidad | La lectura de GitHub continúa privada, 2026-09-14 | El cutover público está bloqueado hasta que Support confirme la eliminación de refs reescritas de pull requests. |
 | Rama predeterminada | `main`; baseline de release anterior a los slices actuales de `develop` | Recibir releases autorizados mediante un pull request separado. |
 | Rama de desarrollo | `develop`; rama de integración de los slices aprobados del issue #4 | Continuar como rama de integración. |
 | Publicación del paquete | Allowlist mínima, prueba de instalación temporal y metadata de acceso público; nada publicado | Publicar solo después de la verificación final y autorización separada. |
