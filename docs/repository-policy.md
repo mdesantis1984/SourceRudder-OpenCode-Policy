@@ -13,9 +13,9 @@ platform readback.
 | Visibility            | Private repository, read 2026-09-13 | Public conversion approved in issue #4; pending publication gate. |
 | Default branch        | `main`; release baseline predates current `develop` slices | Receive authorized releases through a separate pull request. |
 | Development branch    | `develop`; integration branch for approved issue #4 slices | Continue as the integration branch. |
-| Package publication   | `private: true`; dry-run includes non-publishable material | Publish only after a verified minimal allowlist and release gate. |
+| Package publication   | Minimal allowlist, temporary install check, and public access metadata; nothing published | Publish only after final verification and separate authorization. |
 | Upstream relationship | README links to public SourceRudder | Companion plugin; not a fork.                    |
-| Automation            | CI and PR policy tracked on `develop` | Add an applicable release gate before publication. |
+| Automation            | CI, PR policy, and unprivileged release gate tracked on `develop` | Land gates on `main` before publication and require current-base results. |
 | Licensing             | MIT `LICENSE` in the integration tree | Publish the MIT grant with the final release to `main`. |
 | Security reporting    | `SECURITY.md`                       | Use GitHub private reporting when enabled; otherwise request a private channel through a minimal public issue. |
 

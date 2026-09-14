@@ -4,10 +4,18 @@
 
 Este repositorio todavía no publicó paquetes npm, releases de GitHub ni
 deployments. El maintainer autorizó la Licencia MIT y un release real del
-companion v1.0.0 mediante el issue #4. El paquete permanece privado hasta que una
-allowlist verificada elimine material heredado y de revisión de su tarball. Crear
-un tag, release, paquete o deployment requiere autorización separada después de
-verificar el estado final de `main`.
+companion v1.0.0 mediante el issue #4. El nombre del paquete npm estaba disponible
+en la lectura del registro del 2026-09-13. Su allowlist explícita, prueba de
+instalación temporal y metadata de acceso público lo dejan listo para publicación
+sin publicarlo. Crear un tag, release, paquete o deployment requiere autorización
+separada después de verificar el estado final de `main`.
+
+La puerta de release sin privilegios acepta un pull request interno
+`release/v1.0.0` hacia `main`, repite las comprobaciones del repositorio y del
+paquete, y sube el bundle versionado más su checksum SHA-256 como artefacto por
+siete días. Se repite con el push resultante a `main` para que el artefacto
+publicable identifique el commit final exacto. La puerta no tiene permisos de
+escritura y no puede crear un tag, release de GitHub, paquete npm ni deployment.
 
 ## Instalación del operador
 
@@ -16,6 +24,7 @@ Compile y verifique primero un bundle versionado:
 ```sh
 npm run build
 node scripts/verify-installed.mjs dist/sourcerudder-policy-v1.0.0.js
+npm run release:prepare
 ```
 
 Luego un operador puede seguir el procedimiento de copia del

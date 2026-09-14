@@ -18,7 +18,12 @@ npm run typecheck
 npm test
 npm run check:package
 npm run check:docs
+npm run release:prepare
 ```
 
 `npm test` compila `dist/` antes de ejecutar las pruebas compiladas. La salida
 generada y las dependencias se ignoran y no deben incluirse en commits.
+`check:package` crea el tarball de la allowlist en almacenamiento temporal, lo
+instala sin scripts de ciclo de vida e importa su entrada predeterminada.
+`release:prepare` también crea el bundle versionado y su checksum SHA-256 ignorados
+en `release/`; no los publica.
