@@ -47,8 +47,10 @@ jobs:
             }
 
             const branchPattern = /^(feat|fix|chore|docs|style|refactor|perf|test|build|ci|revert)\/[a-z0-9._-]+$/;
-            if (!branchPattern.test(pr.head.ref)) {
-              core.setFailed(`Branch ${pr.head.ref} does not follow type/description naming.`);
+            const releasePattern = /^release\/[a-z0-9._-]+$/;
+            const validReleaseBranch = pr.base.ref === 'main' && releasePattern.test(pr.head.ref);
+            if (!branchPattern.test(pr.head.ref) && !validReleaseBranch) {
+              core.setFailed(`Branch ${pr.head.ref} must use type/description naming, or release/* when targeting main.`);
             }
 
             const titlePattern = /^(build|chore|ci|docs|feat|fix|perf|refactor|revert|style|test)(\([a-z0-9._-]+\))?!?: .+$(?![\s\S])/;

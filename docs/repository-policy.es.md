@@ -13,9 +13,9 @@ administrador y lectura posterior de la plataforma.
 | Visibilidad | Repositorio privado, lectura del 2026-09-13 | Conversión pública aprobada en el issue #4; pendiente de la puerta de publicación. |
 | Rama predeterminada | `main`; baseline de release anterior a los slices actuales de `develop` | Recibir releases autorizados mediante un pull request separado. |
 | Rama de desarrollo | `develop`; rama de integración de los slices aprobados del issue #4 | Continuar como rama de integración. |
-| Publicación del paquete | `private: true` en `package.json`; el dry-run incluye material no publicable | Publicar solo después de una allowlist mínima verificada y la puerta de release. |
+| Publicación del paquete | Allowlist mínima, prueba de instalación temporal y metadata de acceso público; nada publicado | Publicar solo después de la verificación final y autorización separada. |
 | Relación upstream | El README enlaza al SourceRudder público | Complemento; no es un fork. |
-| Automatización | CI y política de PR registradas en `develop` | Agregar una puerta de release aplicable antes de publicar. |
+| Automatización | CI, política de PR y puerta de release sin privilegios registradas en `develop` | Integrar las puertas en `main` antes de publicar y exigir resultados sobre la base actual. |
 | Licencia | `LICENSE` MIT en el árbol de integración | Publicar la concesión MIT con el release final hacia `main`. |
 | Reporte de seguridad | `SECURITY.md` y `SECURITY.es.md` | Utilizar reporte privado de GitHub cuando se habilite; de lo contrario, solicitar un canal privado mediante un issue público mínimo. |
 

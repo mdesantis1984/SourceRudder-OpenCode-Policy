@@ -16,6 +16,13 @@ const packageJson = JSON.parse(
 test("fresh build emits current package, deployment, and policy artifacts", async () => {
   assert.equal(packageJson.name, "opencode-sourcerudder-policy");
   assert.equal(packageJson.version, "1.0.0");
+  assert.equal(packageJson.private, false);
+  assert.equal(packageJson.publishConfig.access, "public");
+  assert.deepEqual(packageJson.files, [
+    "dist/index.js",
+    "dist/sourcerudder-policy-v1.0.0.js",
+    "README.es.md",
+  ]);
   const packageEntry = new URL(packageJson.main, repositoryRoot);
   const versionedBundle = new URL(
     `dist/sourcerudder-policy-v${packageJson.version}.js`,
