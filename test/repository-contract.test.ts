@@ -68,10 +68,29 @@ test("release gate verifies assets without publishing or receiving write access"
   assert.doesNotMatch(workflow, /pull_request_target:/);
   assert.match(workflow, /contents: read/);
   assert.match(workflow, /persist-credentials: false/);
+  assert.match(workflow, /fetch-depth: 0/);
+  assert.match(workflow, /npm run check:public/);
   assert.match(workflow, /npm run release:prepare/);
   assert.match(workflow, /sourcerudder-policy-\$\{\{ github\.sha \}\}/);
   assert.match(workflow, /actions\/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7\.0\.1/);
   assert.match(workflow, /actions\/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7\.0\.0/);
   assert.match(workflow, /actions\/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7\.0\.1/);
   assert.doesNotMatch(workflow, /npm publish|gh release|contents: write/);
+});
+
+test("CI scans complete reachable history without exposing write credentials", async () => {
+  const [workflow, packageMetadata, matrix, spanishMatrix] = await Promise.all([
+    repositoryFile(".github/workflows/ci.yml"),
+    repositoryFile("package.json"),
+    repositoryFile("docs/profile-matrix.md"),
+    repositoryFile("docs/profile-matrix.es.md"),
+  ]);
+
+  assert.match(workflow, /contents: read/);
+  assert.match(workflow, /persist-credentials: false/);
+  assert.match(workflow, /fetch-depth: 0/);
+  assert.match(packageMetadata, /"check:history": "node scripts\/check-history\.mjs"/);
+  assert.match(packageMetadata, /"check:public": "node scripts\/check-history\.mjs --public"/);
+  assert.match(matrix, /Adopted|Adapted|Deferred|Prohibited|Not applicable/);
+  assert.match(spanishMatrix, /Adoptada|Adaptada|Diferida|Prohibida|No aplicable/);
 });
