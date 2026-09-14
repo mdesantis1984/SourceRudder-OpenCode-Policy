@@ -21,11 +21,11 @@ test("history gate detects worktree personal data without printing it", async ()
     await mkdir(join(fixture, "scripts"));
     await cp(join(repositoryRoot, "scripts/check-history.mjs"), join(fixture, "scripts/check-history.mjs"));
     await writeFile(join(fixture, "package.json"), '{"private":false}\n');
-    await writeFile(join(fixture, "README.md"), "Public repository.\n");
-    await writeFile(join(fixture, "README.es.md"), "Repositorio público.\n");
+    await writeFile(join(fixture, "README.md"), "Release candidate verified.\n");
+    await writeFile(join(fixture, "README.es.md"), "Candidato de release verificado.\n");
     await mkdir(join(fixture, "docs"));
-    await writeFile(join(fixture, "docs/repository-policy.md"), "Public visibility.\n");
-    await writeFile(join(fixture, "docs/repository-policy.es.md"), "Visibilidad pública.\n");
+    await writeFile(join(fixture, "docs/repository-policy.md"), "GitHub readback remains private.\n");
+    await writeFile(join(fixture, "docs/repository-policy.es.md"), "La lectura de GitHub continúa privada.\n");
 
     assert.equal(run(fixture, "git", ["init", "-q"]).status, 0);
     assert.equal(run(fixture, "git", ["add", "."]).status, 0);
@@ -33,6 +33,9 @@ test("history gate detects worktree personal data without printing it", async ()
       run(fixture, "git", ["-c", "user.name=Test", "-c", `user.email=${commitEmail}`, "commit", "-qm", "test: fixture"]).status,
       0,
     );
+
+    const publicResult = run(fixture, process.execPath, ["scripts/check-history.mjs", "--public"]);
+    assert.equal(publicResult.status, 0, publicResult.stderr);
 
     await writeFile(join(fixture, "personal.txt"), `${personalEmail}\n`);
     assert.equal(run(fixture, "git", ["add", "personal.txt"]).status, 0);
