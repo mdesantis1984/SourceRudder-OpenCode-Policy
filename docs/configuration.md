@@ -1,5 +1,7 @@
 # Configuration
 
+[English](configuration.md) | [Español](configuration.es.md)
+
 The plugin has no environment variables, network endpoints, or repository-local
 configuration files. Its configuration hook changes only the in-memory merged
 OpenCode permissions it owns:
