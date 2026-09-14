@@ -6,6 +6,9 @@ const documentationFiles = [
   "README.es.md",
   "RUNBOOK.md",
   "CONTRIBUTING.md",
+  "CODE_OF_CONDUCT.md",
+  "CODE_OF_CONDUCT.es.md",
+  "LICENSE",
   "SECURITY.md",
   "SECURITY.es.md",
   "docs/repository-policy.md",
@@ -18,11 +21,35 @@ const documentationFiles = [
   "docs/brand.es.md",
 ];
 const localLinkPattern = /(?<!!)\[[^\]]+\]\(([^)]+)\)/g;
-const requiredReadmeText = [
-  "https://github.com/mdesantis1984/SourceRudder",
-  "not a fork",
-  "Public visibility is approved",
-];
+const htmlTargetPattern = /\b(?:href|src)="([^"]+)"/g;
+const readmeRequirements = {
+  "README.md": [
+    "https://github.com/mdesantis1984/SourceRudder",
+    "not a fork",
+    "Public visibility is approved",
+    "docs/assets/brand/derived/social-preview-1280x640.png",
+    "actions/workflows/ci.yml/badge.svg?branch=main",
+    "img.shields.io/badge/license-MIT-334155",
+    "## Why this policy",
+    "## How it works",
+    "## Choose your path",
+    "## License",
+    "](README.es.md)",
+  ],
+  "README.es.md": [
+    "https://github.com/mdesantis1984/SourceRudder",
+    "no es un fork",
+    "La visibilidad pública está aprobada",
+    "docs/assets/brand/derived/social-preview-1280x640.png",
+    "actions/workflows/ci.yml/badge.svg?branch=main",
+    "img.shields.io/badge/license-MIT-334155",
+    "## Por qué esta política",
+    "## Cómo funciona",
+    "## Elija su ruta",
+    "## Licencia",
+    "](README.md)",
+  ],
+};
 
 for (const file of documentationFiles) {
   const content = await readFile(file, "utf8");
@@ -31,24 +58,55 @@ for (const file of documentationFiles) {
     if (/^(https?:|#|mailto:)/.test(target)) continue;
     await access(resolve(dirname(file), target.split("#")[0]));
   }
+  for (const match of content.matchAll(htmlTargetPattern)) {
+    const target = match[1];
+    if (/^(https?:|mailto:)/.test(target)) continue;
+    if (target.startsWith("#")) {
+      if (!content.includes(`id="${target.slice(1)}"`)) {
+        throw new Error(`${file} contains an unresolved HTML fragment: ${target}`);
+      }
+      continue;
+    }
+    await access(resolve(dirname(file), target.split("#")[0]));
+  }
 }
 
-const readme = await readFile("README.md", "utf8");
-for (const text of requiredReadmeText) {
-  if (!readme.includes(text)) {
-    throw new Error(`README.md must include required project relationship text: ${text}`);
+for (const [file, requirements] of Object.entries(readmeRequirements)) {
+  const content = await readFile(file, "utf8");
+  for (const text of requirements) {
+    if (!content.includes(text)) {
+      throw new Error(`${file} must include required product-front-door text: ${text}`);
+    }
   }
 }
 
 const security = await readFile("SECURITY.md", "utf8");
 const securitySpanish = await readFile("SECURITY.es.md", "utf8");
+const conduct = await readFile("CODE_OF_CONDUCT.md", "utf8");
+const conductSpanish = await readFile("CODE_OF_CONDUCT.es.md", "utf8");
 for (const [file, content, counterpart] of [
   ["SECURITY.md", security, "SECURITY.es.md"],
   ["SECURITY.es.md", securitySpanish, "SECURITY.md"],
+  ["CODE_OF_CONDUCT.md", conduct, "CODE_OF_CONDUCT.es.md"],
+  ["CODE_OF_CONDUCT.es.md", conductSpanish, "CODE_OF_CONDUCT.md"],
 ]) {
   if (!content.includes(`](${counterpart})`)) {
     throw new Error(`${file} must link to ${counterpart}`);
   }
 }
+
+const license = await readFile("LICENSE", "utf8");
+for (const text of [
+  "MIT License",
+  "Copyright (c) 2026 ThisCloud Services",
+  "Permission is hereby granted, free of charge",
+  'THE SOFTWARE IS PROVIDED "AS IS"',
+]) {
+  if (!license.includes(text)) throw new Error(`LICENSE is missing required MIT text: ${text}`);
+}
+const packageMetadata = JSON.parse(await readFile("package.json", "utf8"));
+if (packageMetadata.license !== "MIT") throw new Error("package.json must declare the MIT license");
+const packageLock = JSON.parse(await readFile("package-lock.json", "utf8"));
+if (packageLock.packages?.[""]?.license !== "MIT") throw new Error("package-lock.json must declare the MIT license");
 
 console.log(`check-docs: PASS ${documentationFiles.length} documentation files`);

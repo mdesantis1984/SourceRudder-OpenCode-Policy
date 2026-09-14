@@ -1,17 +1,45 @@
-# Política de SourceRudder
+<p align="center">
+  <img src="docs/assets/brand/derived/social-preview-1280x640.png" width="100%" alt="Bot de SourceRudder junto al escudo separado de SourceRudder Policy.">
+</p>
+
+<p align="center"><strong>Mantenga la investigación de OpenCode en la ruta gobernada de SourceRudder sin reemplazar la configuración del host.</strong></p>
 
 [English](README.md) | [Español](README.es.md)
 
-![Un bot blanco de SourceRudder con una lupa junto a un escudo de políticas luminoso y separado, con un emblema de evidencia de enrutamiento.](assets/bot-shield/hero-bot-shield-es.png)
+<p align="center">
+  <a href="https://github.com/mdesantis1984/SourceRudder-OpenCode-Policy/actions/workflows/ci.yml"><img alt="CI" src="https://github.com/mdesantis1984/SourceRudder-OpenCode-Policy/actions/workflows/ci.yml/badge.svg?branch=main"></a>
+  <img alt="Objetivo OpenCode 1.18.26" src="https://img.shields.io/badge/OpenCode-1.18.26-6366F1">
+  <img alt="CI con Node.js 24" src="https://img.shields.io/badge/CI_Node.js-24-339933?logo=nodedotjs&amp;logoColor=white">
+  <img alt="Política 1.0.0" src="https://img.shields.io/badge/policy-1.0.0-4F46E5">
+  <a href="LICENSE"><img alt="Licencia MIT" src="https://img.shields.io/badge/license-MIT-334155"></a>
+</p>
 
-Un complemento de políticas para OpenCode, seguro ante actualizaciones, que exige
+<p align="center">
+  <a href="#quick-start">Instalar la política</a> ·
+  <a href="#policy-boundary">Examinar el límite</a> ·
+  <a href="#runtime-flow">Ver el flujo de ejecución</a> ·
+  <a href="RUNBOOK.md">Operar y revertir</a> ·
+  <a href="SECURITY.es.md">Informar de forma segura</a>
+</p>
+
+SourceRudder Policy es un complemento para OpenCode, seguro ante actualizaciones, que exige
 investigación con SourceRudder primero y bloquea estrictamente las herramientas
 nativas `websearch` y `webfetch` de OpenCode. Está dirigido a operadores de
 OpenCode que necesitan un límite de política local, pequeño y auditable.
 
 > **Estado:** implementado y verificable localmente. Este proyecto complementario
-> no es un fork, una versión publicada ni una publicación de SourceRudder. La
-> visibilidad pública está aprobada y se sigue en el [issue #4](https://github.com/mdesantis1984/SourceRudder-OpenCode-Policy/issues/4), pendiente de su puerta de publicación.
+> no es un fork, una versión publicada ni una publicación de SourceRudder.
+> La visibilidad pública está aprobada y se sigue en el [issue #4](https://github.com/mdesantis1984/SourceRudder-OpenCode-Policy/issues/4), pendiente de su puerta de publicación.
+> El badge de CI apunta a `main` y solo será evidencia pública anónima después de completar esa puerta.
+
+## Por qué esta política
+
+| Qué necesitan los operadores | Qué proporciona este complemento |
+| --- | --- |
+| Una ruta de investigación predecible | La orientación SourceRudder-first indica la herramienta exacta para cada fuente de evidencia compatible. |
+| Un límite estricto para herramientas nativas | Los permisos combinados deniegan `websearch` y `webfetch`; el hook previo también rechaza llamadas directas. |
+| Convivencia segura con OpenCode | Los permisos no relacionados y el texto del sistema del host se conservan durante la instalación y actualización de la política. |
+| Comportamiento revisable | Una superficie TypeScript pequeña, un conjunto exacto de nombres de herramientas supervisadas, estado de intentos acotado y pruebas de Node exponen el contrato. |
 
 ## Relación con SourceRudder
 
@@ -20,6 +48,28 @@ de [SourceRudder](https://github.com/mdesantis1984/SourceRudder). No incluye,
 configura, publica ni opera ese proyecto ascendente. Solo añade orientación de
 políticas locales de OpenCode y comprobaciones en tiempo de ejecución para las
 herramientas de investigación nativas.
+
+<a id="runtime-flow"></a>
+
+## Cómo funciona
+
+```mermaid
+flowchart LR
+    O["Sesión de OpenCode"] --> P["Complemento SourceRudder Policy"]
+    P --> C["Hook de configuración"]
+    C --> D["Denegar websearch y webfetch nativos"]
+    P --> G["Transformación de orientación del sistema"]
+    G --> R["Dirigir la investigación a herramientas SourceRudder exactas"]
+    P --> H["Hooks de herramientas"]
+    H --> B["Rechazar llamadas nativas"]
+    H --> U["Acotar intentos idénticos no resueltos"]
+    R -. "MCP configurado por separado" .-> S["SourceRudder"]
+```
+
+El complemento gobierna OpenCode en memoria. No actúa como proxy de investigación,
+no inicia SourceRudder ni modifica la conexión MCP configurada por separado.
+
+<a id="quick-start"></a>
 
 ## Inicio rápido
 
@@ -48,6 +98,8 @@ herramientas de investigación nativas.
 La señal local de éxito esperada es una ejecución de pruebas de Node satisfactoria
 y una entrada de paquete `dist/index.js` que se pueda cargar.
 
+<a id="policy-boundary"></a>
+
 ## Qué aplica la política
 
 | Área | Comportamiento |
@@ -70,10 +122,18 @@ y una entrada de paquete `dist/index.js` que se pueda cargar.
 - El complemento se dirige a `@opencode-ai/plugin` `1.18.26` y modifica solo la
   configuración combinada en memoria.
 
+## Elija su ruta
+
+- **Operarlo:** siga el [manual operativo](RUNBOOK.md) para la instalación, las señales de éxito y la reversión.
+- **Revisar el límite:** consulte la [arquitectura](docs/architecture.md) y la [configuración](docs/configuration.md).
+- **Contribuir con seguridad:** utilice la [guía de contribución](CONTRIBUTING.md) y el flujo de issues aprobados.
+- **Auditar la publicación:** lea la [política del repositorio](docs/repository-policy.md) y la [política de seguridad](SECURITY.es.md).
+
 ## Documentación
 
 - [Manual operativo](RUNBOOK.md): compilación, instalación, verificación y reversión.
 - [Guía de contribución](CONTRIBUTING.md): desarrollo local y expectativas de revisión.
+- [Código de Conducta](CODE_OF_CONDUCT.es.md): colaboración y límites de reporte privado.
 - [Security policy](SECURITY.md): orientación para la notificación de vulnerabilidades en inglés.
 - [Política de seguridad](SECURITY.es.md): orientación para la notificación de vulnerabilidades en español.
 - [Política del repositorio](docs/repository-policy.md): flujo de trabajo previsto y límites de administración de GitHub.
@@ -96,8 +156,6 @@ npm run check:package
 npm run check:docs
 ```
 
-## Estado de la licencia
+## Licencia
 
-Este repositorio no concede ninguna licencia. Las licencias siguen siendo una
-decisión de mantenimiento; no se deben asumir derechos de reutilización,
-redistribución ni publicación.
+SourceRudder Policy está disponible bajo la [Licencia MIT](LICENSE).
