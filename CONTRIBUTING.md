@@ -1,5 +1,7 @@
 # Contributing
 
+[English](CONTRIBUTING.md) | [Español](CONTRIBUTING.es.md)
+
 Contributions should keep the policy boundary narrow, testable, and explicit.
 This repository is a companion to SourceRudder, not a fork of its upstream
 project. Participation must follow the [Code of Conduct](CODE_OF_CONDUCT.md).
