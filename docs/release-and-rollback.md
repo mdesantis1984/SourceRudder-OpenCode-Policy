@@ -10,6 +10,10 @@ and public access metadata make it publication-ready without publishing it.
 Creating a tag, release, package, or deployment requires separate authorization
 after final `main` verification.
 
+The release candidate passed its local and `develop` gates on 2026-09-14. The
+repository remains private until GitHub Support confirms removal of rewritten
+pull-request refs; this candidate status is not public availability.
+
 The unprivileged release gate accepts an internal `release/v1.0.0` pull request to
 `main`, reruns repository and package checks, and uploads the versioned bundle plus
 SHA-256 checksum as a seven-day workflow artifact. It repeats on the resulting

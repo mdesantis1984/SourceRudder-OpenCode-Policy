@@ -17,6 +17,8 @@ const documentationFiles = [
   "SECURITY.es.md",
   "docs/repository-policy.md",
   "docs/repository-policy.es.md",
+  "docs/profile-matrix.md",
+  "docs/profile-matrix.es.md",
   "docs/architecture.md",
   "docs/architecture.es.md",
   "docs/configuration.md",
@@ -36,7 +38,7 @@ const readmeRequirements = {
   "README.md": [
     "https://github.com/mdesantis1984/SourceRudder",
     "not a fork",
-    "Public visibility is approved",
+    "release candidate verified",
     "docs/assets/brand/derived/social-preview-1280x640.png",
     "actions/workflows/ci.yml/badge.svg?branch=main",
     "img.shields.io/badge/license-MIT-334155",
@@ -50,7 +52,7 @@ const readmeRequirements = {
   "README.es.md": [
     "https://github.com/mdesantis1984/SourceRudder",
     "no es un fork",
-    "La visibilidad pública está aprobada",
+    "candidato de release verificado",
     "docs/assets/brand/derived/social-preview-1280x640.png",
     "actions/workflows/ci.yml/badge.svg?branch=main",
     "img.shields.io/badge/license-MIT-334155",
@@ -67,6 +69,7 @@ const readmeRequirements = {
     "docs/operations.es.md",
     "docs/release-and-rollback.es.md",
     "docs/repository-policy.es.md",
+    "docs/profile-matrix.es.md",
     "](README.md)",
   ],
 };
@@ -127,6 +130,8 @@ for (const [file, content, counterpart] of [
   ["docs/release-and-rollback.es.md", await readFile("docs/release-and-rollback.es.md", "utf8"), "release-and-rollback.md"],
   ["docs/repository-policy.md", await readFile("docs/repository-policy.md", "utf8"), "repository-policy.es.md"],
   ["docs/repository-policy.es.md", await readFile("docs/repository-policy.es.md", "utf8"), "repository-policy.md"],
+  ["docs/profile-matrix.md", await readFile("docs/profile-matrix.md", "utf8"), "profile-matrix.es.md"],
+  ["docs/profile-matrix.es.md", await readFile("docs/profile-matrix.es.md", "utf8"), "profile-matrix.md"],
 ]) {
   if (!content.includes(`](${counterpart})`)) {
     throw new Error(`${file} must link to ${counterpart}`);

@@ -26,9 +26,10 @@ SourceRudder Policy is an upgrade-safe OpenCode plugin that requires SourceRudde
 while strictly blocking OpenCode's native `websearch` and `webfetch` tools.
 It is for OpenCode operators who need a small, auditable local policy boundary.
 
-> **Status:** implemented and locally verifiable. This companion project is not a fork,
-> release, or publication of SourceRudder. Public visibility is approved
-> and tracked by [issue #4](https://github.com/mdesantis1984/SourceRudder-OpenCode-Policy/issues/4), pending its publication gate.
+> **Status:** release candidate verified. This companion project is not a fork or
+> publication of SourceRudder. The repository remains private while GitHub Support
+> removes rewritten pull-request references; the cutover is tracked by
+> [issue #4](https://github.com/mdesantis1984/SourceRudder-OpenCode-Policy/issues/4).
 > The CI badge targets `main` and becomes anonymous public evidence only after that gate completes.
 
 ## Why this policy
@@ -135,6 +136,8 @@ The expected local success signal is a passing Node test run and a loadable
 - [Política de seguridad](SECURITY.es.md): guía de notificación de vulnerabilidades en español.
 - [Repository policy](docs/repository-policy.md): intended workflow and GitHub
   administration boundaries.
+- [SourceRudder profile matrix](docs/profile-matrix.md): adopted, adapted,
+  deferred, prohibited, and non-applicable artifact families.
 - [Architecture](docs/architecture.md): plugin boundaries and runtime flow.
 - [Configuration](docs/configuration.md): owned configuration changes and limits.
 - [Operations](docs/operations.md): local verification and operational signals.

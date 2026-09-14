@@ -10,7 +10,7 @@ platform readback.
 
 | Topic                 | Current evidence                    | Intended state                                   |
 | --------------------- | ----------------------------------- | ------------------------------------------------ |
-| Visibility            | Private repository, read 2026-09-13 | Public conversion approved in issue #4; pending publication gate. |
+| Visibility            | GitHub readback remains private, 2026-09-14 | Public cutover is blocked until Support confirms removal of rewritten pull-request refs. |
 | Default branch        | `main`; release baseline predates current `develop` slices | Receive authorized releases through a separate pull request. |
 | Development branch    | `develop`; integration branch for approved issue #4 slices | Continue as the integration branch. |
 | Package publication   | Minimal allowlist, temporary install check, and public access metadata; nothing published | Publish only after final verification and separate authorization. |
